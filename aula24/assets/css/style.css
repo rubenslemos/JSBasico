@@ -131,3 +131,6 @@ form button:active{
   margin-top: 20px;
   margin-bottom: 0;
 }
+.bold{
+  font-weight: bolder;
+}
