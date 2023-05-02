@@ -26,7 +26,7 @@ criaPessoa = (nome, sobrenome, idade) => {
       idade
    }
 };
-
+aula20/index.js
 let cadastro1 = criaPessoa('Iara', "Santiago", 39);
 cadastro1 = criaPessoa('Rubens', "Silva", 40);
 
