@@ -50,11 +50,7 @@ setResultado = (msg, isValid) => {
   const resultado = document.querySelector('#resultado');
   resultado.innerHTML = '';//limpa o elemento resultado caso ele tenha algum conteudo
   const p = criaP();
-  if (isValid) {
-    p.classList.add('p-resultado');
-  } else {
-    p.classList.add('p-semResultado');
-  }
+  isValid ? p.classList.add('p-resultado') : p.classList.add('p-semResultado');
   p.innerHTML = msg; //insere algo ao elemento
   resultado.appendChild(p);//adicionou o elemento p criado ao elemento resultado
 }
