@@ -12,7 +12,7 @@ diaDaSemanaT = (diaDaSemanaN) => {
   }
 }
 const data = new Date();
-let diaDaSemanaN = data.getDay();
+const diaDaSemanaN = data.getDay();
 const diaDaSemana = diaDaSemanaT(diaDaSemanaN);
 console.log(diaDaSemanaN+1, diaDaSemana);
 
