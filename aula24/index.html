@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcule seu IMC</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <section class="container">
+    <h1>Tabela IMC</h1>
+    <div class="imc2">
+      <div class="imc masc">
+        <h2>Homens</h2>
+        <p>IMC</p>
+        <p>Menos de 18,5</p>
+        <p>Entre 18,5 e 24,5</p>
+        <p>Entre 25 e 29,9</p>
+        <p>Entre 30 e 34,9</p>
+        <p>Entre 35 e 39,9</p>
+        <p>40 ou maior</p>
+      </div>
+      <div class="imc masc">
+        <h2>&nbsp;</h2>
+        <p>Resultado</p>
+        <p>Abaixo do peso</p>
+        <p>Peso normal</p>
+        <p>Sobrepeso</p>
+        <p>Obesidade grau 1</p>
+        <p>Obesidade grau 2</p>
+        <p>Obesidade grau 3</p>
+      </div>
+    </div>
+    <div class="imc2">
+      <div class="imc fem">
+        <h2>Mulheres</h2>
+        <p>IMC</p>
+        <p>Menos de 18</p>
+        <p>Entre 18,1 e 21,8</p>
+        <p>Entre 21,9 e 24,8</p>
+        <p>Entre 24,9 e 30</p>
+        <p>Entre 30,1 e 35,8</p>
+        <p>35,9 ou maior</p>
+      </div>
+      <div class="imc fem">
+        <h2>&nbsp;</h2>
+        <p>Resultado</p>
+        <p>Abaixo do peso</p>
+        <p>Peso normal</p>
+        <p>Sobrepeso</p>
+        <p>Obesidade grau 1</p>
+        <p>Obesidade grau 2</p>
+        <p>Obesidade grau 3</p>
+      </div>
+    </div>        
+    <h1>Calcule seu IMC</h1>
+    <form action="/" id="form" method="get">
+      <label for="sexo">Sexo</label>
+      <select id="sexo" name="sexo" placeholder="sexo">
+        <option value="" selected="selected"></option>
+        <option value="1">Masculino</option>
+        <option value="2">Feminino</option>
+      </select>      
+      <label for="peso">Peso</label>
+      <input type="text" id="peso" name="peso" placeholder="Peso">      
+      <label for="altura">Altura</label>
+      <input type="text" id="altura" name="altura" placeholder="Altura">
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado"></div>
+  </section>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
