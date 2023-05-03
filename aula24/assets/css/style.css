@@ -19,7 +19,7 @@ body{
   max-width: 540px;
   margin: 20px auto;
   background-color: var(--second-color);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
 }
 .container h1{
@@ -116,12 +116,12 @@ form button:active{
   color: var(--primary-color);
   background-color: var(--second-color);
   padding-left: 10px;
-  height: 40px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 0;
   font-weight: bold;
 }
@@ -129,15 +129,23 @@ form button:active{
   color: var(--bad-color);
   background-color: var(--second-color);
   padding-left: 10px;
-  height: 40px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 0;
   font-weight: bold;
 }
 .bold{
   font-weight: bolder;
+}
+.dia p{
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--primary-color);
+  font-weight: bold;
 }
