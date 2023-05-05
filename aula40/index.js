@@ -23,5 +23,5 @@ try{
 } catch (error){
   console.log(`${error}`)
 } finally{
-  console.log('retornaHora finalizada');
+  console.log('Função retornaHora finalizada.');
 }
