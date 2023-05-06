@@ -70,5 +70,5 @@ body {
 }
 .botoes button:nth-child(3):active{
   color:#d1d0d0;
-  background-color: rgb(97, 126, 73);
+  background-color: rgb(126, 126, 126);
 }
