@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container h1{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  color: var(--primary-color);
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+.container p{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.input-tarefa {
+  width: 86%;
+  height: 32px;
+  font-size: 17px;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding-left: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+.input-tarefa:hover{
+  border: 2px solid var(--primary-color-darker);
+  box-shadow: 1px 1px 2px var(--primary-color-darker);
+}
+.input-tarefa:focus{
+  border: 2px solid var(--primary-color-darker);
+  box-shadow: 1px 1px 2px var(--primary-color-darker);
+}
+.btn-apagar, .bnt-tarefa{
+  padding: 7px 10px;
+  height: 32px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: none;
+  border: 0.5px solid var(--primary-color);
+  color: #d1d0d0;;
+  border-radius: 5px;
+}
+
+.btn-apagar:hover, .bnt-tarefa:hover{
+  color: var(--primary-color);
+  background-color: #d1d0d0;;
+}
+.bnt-tarefa:active{
+  color:#d1d0d0;
+  background-color: rgb(112, 121, 236);
+}
+.btn-apagar:active{
+  color:#d1d0d0;
+  background-color: rgb(236, 112, 112);
+}
+.tarefas ul{
+  position: absolute;
+}
+.tarefas li{
+  position: relative;
+  left: -40px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  list-style: none;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 660px;
+  padding-left: 8px;
+}
