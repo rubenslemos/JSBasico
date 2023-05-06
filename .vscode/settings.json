@@ -19,6 +19,8 @@
     "paragrafos",
     "pariatur",
     "quisquam",
+    "relogio",
+    "Relogio",
     "Repellendus",
     "saepe",
     "saudacao",
@@ -26,5 +28,12 @@
     "veritatis",
     "voluptatibus",
     "voluptatum"
-  ]
+  ],
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.localEchoStyle": "dim",
+  "terminal.integrated.tabs.defaultColor": null,
+  "terminal.integrated.tabs.description": "${cwdFolder}",
+  "terminal.integrated.tabs.location": "right"
 }
