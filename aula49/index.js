@@ -11,7 +11,7 @@
 */
 //exemplo de uma função imediata (deve ser criada dentro de () para não dar erro)
  (function(idade, peso, altura) {
-  const sobrenome = 'Luiz';
+  const sobrenome = 'Moura';
   criaNome=(nome)=>{
     return nome + ' ' + sobrenome;  
   }
