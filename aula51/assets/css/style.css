@@ -24,6 +24,11 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
 }
 
 form input, form label, form button {
@@ -55,4 +60,35 @@ form button {
 
 form button:hover {
   background: var(--primary-color-darker);
+}
+.calculadora{
+  width: 500px;
+}
+.display{
+  font-size: 1.5em;
+  width: 100%;
+  text-align:right;
+  color: var(--primary-color);
+}
+.btn{
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  border-radius:5px;
+  background-color: rgb(28, 119, 138);
+  color:darkgray;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover{
+  background-color: var(--primary-color);
+  color: rgb(214, 214, 214);
+}
+.btn-eq:hover, .btn-del{
+  background-color:darkgray ;
+  color: rgb(28, 119, 138);
+}
+.btn-eq, .btn-del{
+  background-color: var(--primary-color);
+  color: rgb(214, 214, 214);
 }
