@@ -19,10 +19,10 @@ body {
 }
 
 .container {
-  max-width: 640px;
+  max-width: 540px;
   margin: 50px auto;
   background: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -30,36 +30,9 @@ body {
   align-items: center;
   color: var(--primary-color);
 }
-
-form input, form label, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
-}
-
-form input:focus {
-  outline: 1px solid var(--primary-color);
-}
-
-form button {
-  border: none;
-  background: var(--primary-color);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-form button:hover {
-  background: var(--primary-color-darker);
+.container h1{
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .calculadora{
   width: 500px;
@@ -69,6 +42,9 @@ form button:hover {
   width: 100%;
   text-align:right;
   color: var(--primary-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  
 }
 .btn{
   width: 100%;
