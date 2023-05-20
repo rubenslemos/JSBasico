@@ -1,13 +1,15 @@
 /* 
-   - Retorne a soma do dobro de todos os pares
-   - Filtrar pares
-   - Dobrar os valores
-   - Reduzir (somar tudo)
+  forEach está disponível apenas dentro de um array e apenas fara iteração nele
 */
-const numos = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 77];
-const somaDobroPares = numos
-  .filter(valor => valor % 2 ===0)
-  .map(obj => obj * 2)
-  .reduce((acumulador, obj)=> acumulador += obj
-);
-console.log(`Soma do dobro dos pares: ${somaDobroPares}`);
+const numerais = [10, 20, 30, 40, 50, 60, 70, 80, 90] ;
+//iterando com for of
+for (let i of numerais) {
+  console.log(i);
+}
+//iterando com forEach
+numerais.forEach(valor => console.log(`Valor: ${valor}`));
+
+//simulando reduce com forEach
+let total = 0;
+numerais.forEach(valor => total += valor);
+console.log(total);
