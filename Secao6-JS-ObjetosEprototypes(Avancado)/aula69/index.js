@@ -73,5 +73,5 @@ const novoProduto = Object.create(Produto.prototype,{
 console.log(novoProduto);
 novoProduto.desconto(10);
 console.log(novoProduto);
-novoProduto.aumento(20);
+novoProduto.aumento(25);
 console.log(novoProduto);
