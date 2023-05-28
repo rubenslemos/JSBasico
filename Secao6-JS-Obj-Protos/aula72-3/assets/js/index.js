@@ -33,20 +33,21 @@ ValidaDocumento.prototype.criaDigito = function(documentoParcial){
   },0);
   const digito = (total % 11);
   return digito < 2 ? '0' : String(11-digito)
-}else {
-  regressivo = documentoArray.length +1;
-  const total = documentoArray.reduce((acumulador, numDocumento) => {
-    acumulador += (regressivo * Number(numDocumento));
-    --regressivo;
-    return acumulador;
-  },0);
-  const digito = 11 - (total % 11);
-  return digito >9 ? '0' : String(digito)
+  }else {
+    regressivo = documentoArray.length +1;
+    const total = documentoArray.reduce((acumulador, numDocumento) => {
+      acumulador += (regressivo * Number(numDocumento));
+      --regressivo;
+      return acumulador;
+    },0);
+    const digito = 11 - (total % 11);
+    return digito >9 ? '0' : String(digito)
+  };
 };
-}
+
 ValidaDocumento.prototype.isSequencia = function (){
   return (this.documentoLimpo[0].repeat(this.documentoLimpo.length) === this.documentoLimpo);
-}
+};
 
 const salvarVerifica = () => {
   const liVerifica = verifica.querySelectorAll('li');
@@ -58,23 +59,25 @@ const salvarVerifica = () => {
   }
   const verificaJSON = JSON.stringify(listaDeVerifica);
   localStorage.setItem('verifica', verificaJSON);
-}
+};
 
 const criaTarefa = (textoInput) => {
   criaLi(textoInput);
   salvarVerifica();
-}
+};
 
 const criaLi = (textoInput) => {
   const li = document.createElement('li');
   li.innerHTML = textoInput;
   verifica.appendChild(li);
   criarBotaoApagar(li);
- }
+};
+
 const limpaInput = () => {
   inputVerifica.value ='';
   inputVerifica.focus();
-}
+};
+
 const criarBotaoApagar = (li) => {
   li.innerText += ' ';
   const botaoApagar = document.createElement('button');
@@ -82,7 +85,8 @@ const criarBotaoApagar = (li) => {
   botaoApagar.setAttribute('class', 'btn-apagar');
   botaoApagar.setAttribute('title', 'Apagar esta verificação');
   li.appendChild(botaoApagar);
-}
+};
+
 btnVerifica.addEventListener('click', () => {
   if (!inputVerifica.value) return;
   const documento = new ValidaDocumento(inputVerifica.value);
@@ -94,7 +98,7 @@ btnVerifica.addEventListener('click', () => {
     }
   }else{
     inputVerifica.value += ' - Documento Inválido';
-}  
+  }  
   criaTarefa(inputVerifica.value);
   limpaInput()
 });
@@ -105,19 +109,20 @@ inputVerifica.addEventListener('keypress', (event) => {
     const documento = new ValidaDocumento(inputVerifica.value);
     if (documento.valida()){
       if(documento.documentoLimpo.length === 14){
-        inputVerifica.value +=' CNPJ Valido';
+        inputVerifica.value +=' - CNPJ Valido';
       }else{
-        inputVerifica.value += ' CPF Válido';
+        inputVerifica.value += ' - CPF Válido';
       }
     }else{
-      inputVerifica.value += ' Documento Inválido';
-  }  
+      inputVerifica.value += ' - Documento Inválido';
+    }  
     criaTarefa(inputVerifica.value);
     limpaInput()
   }
 });
+
 document.addEventListener('click', (e) => {
-   if (e.target.classList.contains('btn-apagar')){
+  if (e.target.classList.contains('btn-apagar')){
     e.target.parentElement.remove();
     salvarVerifica();
   } 
@@ -129,5 +134,6 @@ const adicionaVerificaSalvas= () => {
   for (let verifica of listaDeVerifica){
     criaTarefa(verifica);
   }
-}
+};
+
 adicionaVerificaSalvas();
