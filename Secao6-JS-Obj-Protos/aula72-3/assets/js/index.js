@@ -87,23 +87,22 @@ const criarBotaoApagar = (li) => {
   li.appendChild(botaoApagar);
 };
 
-btnVerifica.addEventListener('click', () => {
+const handleValidation = () => {
   if (!inputVerifica.value) return;
   const documento = new ValidaDocumento(inputVerifica.value);
-  inputVerifica.value += documento.valida() ? ((documento.documentoLimpo.length === 14) ? ' - CNPJ Válido' : ' - CPF Válido') : ' - Documento Inválido';
-  criaTarefa(inputVerifica.value);
-  limpaInput()
-});
-
-inputVerifica.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter'){ 
-    if (!inputVerifica.value) return;
-    const documento = new ValidaDocumento(inputVerifica.value);
-    inputVerifica.value += documento.valida() ? ((documento.documentoLimpo.length === 14) ? ' - CNPJ Válido' : ' - CPF Válido') : ' - Documento Inválido';
-
+  const resultado = documento.valida() ? ((documento.documentoLimpo.length === 14) ? ' - CNPJ Válido' : ' - CPF Válido') : ' - Documento Inválido';
+  inputVerifica.value += resultado;
   criaTarefa(inputVerifica.value);
   limpaInput();
-}});
+};
+
+btnVerifica.addEventListener('click', handleValidation);
+inputVerifica.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    handleValidation();
+  }
+});
+
 
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('btn-apagar')){
