@@ -1,53 +1,48 @@
 const inputVerifica = document.querySelector('.input-verifica');
 const btnVerifica = document.querySelector('.bnt-verifica');
 const verifica = document.querySelector('.verifica');
-function ValidaDocumento (doc){
-  Object.defineProperty(this,'documentoLimpo',{
-    enumerable:true,
-    get: function(){
-      return doc.replace(/\D+/g, '');
-    }
-  })
-};
+class ValidaDocumento {
+  constructor(doc) {
+    Object.defineProperty(this, 'documentoLimpo', {
+      enumerable: true,
+      get: function () {
+        return doc.replace(/\D+/g, '');
+      }
+    });
+  }
+  valida() {
+    typeof this.documentoLimpo === 'undefined' ? false : (this.documentoLimpo.length !== 11 && this.documentoLimpo.length !== 14 ? false : true);
 
-ValidaDocumento.prototype.valida = function(){
-  typeof this.documentoLimpo === 'undefined' ? false : (this.documentoLimpo.length !== 11 && this.documentoLimpo.length !== 14 ? false : true);
+    if (this.isSequencia())
+      return false;
+    const documentoParcial = this.documentoLimpo.slice(0, -2);
+    const digito1 = this.criaDigito(documentoParcial);
+    const digito2 = this.criaDigito(documentoParcial + digito1);
+    const documento = documentoParcial + digito1 + digito2;
+    return this.documentoLimpo === documento;
+  }
 
-  if (this.isSequencia()) return false;
-  const documentoParcial = this.documentoLimpo.slice(0,-2);
-  const digito1 = this.criaDigito(documentoParcial);
-  const digito2 = this.criaDigito(documentoParcial+digito1);
-  const documento =documentoParcial+digito1+digito2;
-  return this.documentoLimpo === documento;
-};
-
-ValidaDocumento.prototype.criaDigito = function(documentoParcial){
-  const documentoArray = Array.from(documentoParcial);
-  if(documentoArray.length >= 12 ){
-    let regressivo = documentoArray.length -7;
+  criaDigito(documentoParcial) {
+    const documentoArray = Array.from(documentoParcial);
+    let regressivo = documentoArray.length >= 12 ? documentoArray.length - 7 : documentoArray.length + 1;
+    
     const total = documentoArray.reduce((acumulador, numDocumento) => {
       acumulador += (regressivo * Number(numDocumento));
-      --regressivo;
-      regressivo === 1 ? regressivo = 9 : regressivo
+      regressivo--;
+      regressivo === 1 ? regressivo = 9 : regressivo;
       return acumulador;
-    },0);
-    const digito = (total % 11);
-    return digito < 2 ? '0' : String(11-digito)
-  }else {
-    regressivo = documentoArray.length +1;
-    const total = documentoArray.reduce((acumulador, numDocumento) => {
-      acumulador += (regressivo * Number(numDocumento));
-      --regressivo;
-      return acumulador;
-    },0);
-    const digito = 11 - (total % 11);
-    return digito >9 ? '0' : String(digito)
-  };
+    }, 0);
+  
+    const digito = total % 11;
+    return digito < 2 ? '0' : String(11 - digito);
+  }
+  isSequencia() {
+    return (this.documentoLimpo[0].repeat(this.documentoLimpo.length) === this.documentoLimpo);
+  }
 };
 
-ValidaDocumento.prototype.isSequencia = function (){
-  return (this.documentoLimpo[0].repeat(this.documentoLimpo.length) === this.documentoLimpo);
-};
+
+
 
 const salvarVerifica = () => {
   const liVerifica = verifica.querySelectorAll('li');
