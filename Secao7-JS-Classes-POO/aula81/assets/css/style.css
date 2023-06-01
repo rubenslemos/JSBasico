@@ -95,3 +95,8 @@ label{
   padding-top: 8px;
   font-size: 1.3rem;
 }
+
+.error-text{
+  color: red;
+  font-size: 12px;
+}
