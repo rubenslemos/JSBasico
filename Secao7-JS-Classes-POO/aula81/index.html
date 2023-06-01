@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Valida Documentos</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2016/05/30/17/26/hook-1425312__180.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,700,0,200" />
+
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Formulário de cadastro</h1>
+    <ul class="verifica fa-ul">
+      <li><span class="material-symbols-outlined">chevron_right</span>Nenhum Campo pode estar vazio</li>
+      <li><span class="material-symbols-outlined">chevron_right</span>Usuário só poderá conter letras e/ou números</li>
+      <li><span class="material-symbols-outlined">chevron_right</span>Usuário deverá ter tamanho de 3 a 12 caracteres</li>
+      <li><span class="material-symbols-outlined">chevron_right</span>A senha deverá ter tamanho de 6 a 12 caracteres</li>
+    </ul>
+    <form action="/" method="post" class="formulario">
+      <label for="">Nome</label>
+      <input type="text" class="nome">
+      <label for="">Sobrenome</label>
+      <input type="text" class="sobrenome">
+      <label for="">CPF</label>
+      <input type="text" class="cpf">
+      <label for="">Usuário</label>
+      <input type="text" class="usuario">
+      <label for="">Senha</label>
+      <input type="text" class="senha">
+      <label for="">Repetir senha</label>
+      <input type="text" class="repetir-senha">
+      <button type="submit" class="btn-verifica">Salvar</button>
+    </form>
+  </section>
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
+
