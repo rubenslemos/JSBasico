@@ -14,22 +14,22 @@ const salvarTarefas = () => {
   localStorage.setItem('tarefas', tarefasJSON);
 }
 
-const criaTarefa = (textoInput) => {
-  criaLi(textoInput);
+const criaTarefas = (textoInput) => {
+  criaLis(textoInput);
   salvarTarefas();
 }
 
-const criaLi = (textoInput) => {
+const criaLis = (textoInput) => {
   const li = document.createElement('li');
   li.innerHTML = textoInput;
   tarefas.appendChild(li);
-  criarBotaoApagar(li);
+  criarBotaoApaga(li);
  }
-const limpaInput = () => {
+const limpaInputs = () => {
   inputTarefa.value ='';
   inputTarefa.focus();
 }
-const criarBotaoApagar = (li) => {
+const criarBotaoApaga = (li) => {
   li.innerText += ' ';
   const botaoApagar = document.createElement('button');
   botaoApagar.innerText = 'Apagar';
@@ -37,17 +37,18 @@ const criarBotaoApagar = (li) => {
   botaoApagar.setAttribute('title', 'Apagar esta tarefa');
   li.appendChild(botaoApagar);
 }
-bntTarefa.addEventListener('click', () => {
+
+bntTarefa?.addEventListener('click', () => {
   if (!inputTarefa.value) return;
-  criaTarefa(inputTarefa.value);
-  limpaInput()
+  criaTarefas(inputTarefa.value);
+  limpaInputs()
 });
 
-inputTarefa.addEventListener('keypress', (event) => {
+inputTarefa?.addEventListener('keypress', (event) => {
   if (event.key === 'Enter'){ 
     if (!inputTarefa.value) return;
-    criaTarefa(inputTarefa.value);
-    limpaInput()
+    criaTarefas(inputTarefa.value);
+    limpaInputs()
   }
 });
 document.addEventListener('click', (e) => {
@@ -60,8 +61,9 @@ document.addEventListener('click', (e) => {
 const adicionaTarefasSalvas= () => {
   const tarefas = localStorage.getItem('tarefas');
   const listaDeTarefas = JSON.parse(tarefas);
+  if (listaDeTarefas === null) return;
   for (let tarefa of listaDeTarefas){
-    criaTarefa(tarefa);
+    criaTarefas(tarefa);
   }
 }
 adicionaTarefasSalvas();

@@ -94,3 +94,11 @@ body {
   width: 660px;
   padding-left: 8px;
 }
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:visited {
+  color: var(--primary-color);
+}

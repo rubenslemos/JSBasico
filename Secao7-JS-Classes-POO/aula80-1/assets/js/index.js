@@ -91,8 +91,8 @@ const handleValidation = () => {
   limpaInput();
 };
 
-btnVerifica.addEventListener('click', handleValidation);
-inputVerifica.addEventListener('keypress', (event) => {
+btnVerifica?.addEventListener('click', handleValidation);
+inputVerifica?.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     handleValidation();
   }
@@ -109,6 +109,7 @@ document.addEventListener('click', (e) => {
 const adicionaVerificaSalvas= () => {
   const verifica = localStorage.getItem('verifica');
   const listaDeVerifica = JSON.parse(verifica);
+  if (listaDeVerifica === null) return;
   for (let verifica of listaDeVerifica){
     criaTarefa(verifica);
   }

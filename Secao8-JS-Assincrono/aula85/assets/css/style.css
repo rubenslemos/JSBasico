@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&family=Poppins:wght@200&display=swap');
+
 :root {
   --primary-color: rgb(37, 128, 148);
   --primary-color-darker: rgb(9, 48, 56);
@@ -32,73 +34,85 @@ body {
   align-items: center;
   color: var(--primary-color);
   font-size: 32px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
-.container p{
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-}
-.input-verifica {
-  width: 86%;
-  height: 32px;
-  font-size: 17px;
+
+input {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  width: 100%;
+  height: 33px;
+  font-size: 1.3rem;
   color: var(--primary-color);
-  font-weight: bold;
   padding-left: 8px;
   border-radius: 5px;
   border: 1px solid var(--primary-color);
 }
 
-.input-verifica:focus,.input-verifica:hover{
+input:focus, input:hover{
   border: 2px solid var(--primary-color-darker);
   box-shadow: 1px 1px 2px var(--primary-color-darker);
 }
-.btn-apagar, .bnt-verifica{
-  padding: 7px 10px;
+.btn-verifica{
+  position: relative;
+  display:flex;
+  font-size: 1.3rem;
+  margin-top: 15px;
+  padding: 17px 17px;
   height: 32px;
-  font-weight: bold;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-color);
   border: none;
   border: 0.5px solid var(--primary-color);
-  color: #d1d0d0;;
-  border-radius: 5px;
+  color: #ffffff;;
+  border-radius: 7px;
+  right: -565px;
 }
 
-.btn-apagar:hover, .bnt-verifica:hover{
+.btn-verifica:hover{
   color: var(--primary-color);
   background-color: #d1d0d0;;
 }
-.bnt-verifica:active{
-  color:#d1d0d0;
+.btn-verifica:active{
+  color:#ffffff;
   background-color: rgb(112, 121, 236);
 }
-.btn-apagar:active{
-  color:#d1d0d0;
-  background-color: rgb(236, 112, 112);
-}
-.verifica ul{
-  position: absolute;
-}
 .verifica li{
-  position: relative;
-  left: -40px;
+
   display: flex;
-  justify-content:space-between;
-  align-items: center;
-  list-style: none;
   color: var(--primary-color);
-  border-bottom: 1px solid var(--primary-color);
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 660px;
-  padding-left: 8px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  margin-left: -45px;
+  font-size: 1.2rem;
 }
-a {
+span{
+  margin-right: 7px;
+  padding-top: 5px;
+}
+label{
+  display: flex;
+  color: var(--primary-color);
+  padding-top: 8px;
+  font-size: 1.3rem;
+}
+
+.error-text{
+  color: red;
+  font-size: 11px;
+  font-weight: 300;
+  font-family: 'Comfortaa', cursive;
+  height: 17px;
+}
+a, a:visited{
   text-decoration: none;
   color: var(--primary-color);
 }
-
-a:visited {
-  color: var(--primary-color);
+p{
+  display: flex;
+  justify-content:space-evenly ;
+  padding: 0px;
+  margin: 0px;
 }

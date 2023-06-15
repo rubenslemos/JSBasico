@@ -149,3 +149,10 @@ form button:active{
   color: var(--primary-color);
   font-weight: bold;
 }
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:visited{
+  color: var(--primary-color);
+}

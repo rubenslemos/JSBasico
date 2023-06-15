@@ -1,5 +1,6 @@
-function Calculadora () {
-    this.display = document.querySelector('.display');
+function Calculadora() {
+    const tabela = document.querySelector('.calculadora')
+    this.display = tabela.querySelector('.display');
     this.inicia = () => {
       this.cliqueBotoes();
       this.pressionaEnter();
@@ -7,7 +8,7 @@ function Calculadora () {
     this.cliqueBotoes= () => {
       document.addEventListener('click', e => {
         const el = e.target;
-        if (el.classList.contains('btn-num')) this.btnParaDisplay(el.innerText);
+        if(el.classList.contains('btn-num')) this.btnParaDisplay(el.innerText);
         if(el.classList.contains('btn-clear')) this.clearDisplay();
         if(el.classList.contains('btn-del')) this.deleteOne();        
         if(el.classList.contains('btn-eq')) this.total();
@@ -33,7 +34,7 @@ function Calculadora () {
           return
       }
     },
-    this.pressionaEnter = () => this.display.addEventListener('keyup', e => {if(e.keyCode === 13) this.total();});
+    this.pressionaEnter = () => this.display?.addEventListener('keyup', e => {if(e.keyCode === 13) this.total();});
 }
 const calculadora = new Calculadora();
 calculadora.inicia();

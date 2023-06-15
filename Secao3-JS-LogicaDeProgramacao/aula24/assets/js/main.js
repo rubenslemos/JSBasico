@@ -1,5 +1,5 @@
 const form = document.querySelector('#form');
-form.addEventListener('submit', (e) => {
+form?.addEventListener('submit', (e) => {
   e.preventDefault();
   setResultado("teste");
   const inputPeso = e.target.querySelector('#peso');
@@ -46,7 +46,7 @@ criaP = () => {
   return p;
 }
 
-setResultado = (msg, isValid) => {
+setResultado = (msg, isValid) =>{
   const resultado = document.querySelector('#resultado');
   resultado.innerHTML = '';//limpa o elemento resultado caso ele tenha algum conteudo
   const p = criaP();
